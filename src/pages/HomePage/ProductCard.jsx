@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { CarContext, CarContext } from '../../contexts/CarContext';
+import { CartContext } from '../../contexts/CartContext';
 
 const ProductCard = ({ id, name, brand, image, feminine, price }) => {
-  const { addToCart } = useContext(CarContext);
+  const { addToCart } = useContext(CartContext);
   return (
     <article className='card-produto group w-48 bg-stone-100 shadow-xl shadow-slate-200 flex flex-col justify-around border-2 border-gray-200 rounded-lg  '>
       <img
