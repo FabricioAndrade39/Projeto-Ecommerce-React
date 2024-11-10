@@ -1,12 +1,15 @@
-import { useContext, useState, useEffect } from 'react';
-import { CartContext, getAmountOfItemsInCart } from '../contexts/CartContext';
+import { useState, useEffect } from 'react';
+import {
+  useCartContext,
+  getAmountOfItemsInCart,
+} from '../contexts/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const UserButtons = () => {
   const [amountOfItems, setAmountOfItems] = useState(0);
-  const { toggleCartOpen, cartItems } = useContext(CartContext);
+  const { toggleCartOpen, cartItems } = useCartContext();
 
   useEffect(() => {
     setAmountOfItems(getAmountOfItemsInCart(cartItems));
